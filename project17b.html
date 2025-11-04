@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet - Portfolio</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    /* Header & Titles */
+    .header-container, .header-top {
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      align-items: flex-start;
+      gap: 40px;
+      position: relative;
+      padding: 0px 40px;
+      padding-bottom: 50px;
+    }
+
+    .header-top {
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+    }
+
+    .project-title {
+      font-size: 3rem;
+      font-weight: normal;
+      letter-spacing: 2px;
+      margin: 0;
+      color: #000;
+    }
+
+    .credits {
+      width: 23%;
+      text-transform: uppercase;
+      font-size: 1rem;
+      color: #000;
+      line-height: 1.5;
+      flex-shrink: 0;
+    }
+
+    .description {
+      width: 77%;
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .close-button {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-decoration: none;
+      color: black;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 10;
+      transition: color 0.3s ease;
+    }
+
+    .close-button:hover {
+      color: #000;
+    }
+
+    /* --- PHOTO MOSAIC GRID --- */
+    .photo-mosaic {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0;
+    }
+
+    .photo-mosaic img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Random large images for organic layout */
+    .photo-mosaic img:nth-child(4),
+    .photo-mosaic img:nth-child(9),
+    .photo-mosaic img:nth-child(14),
+    .photo-mosaic img:nth-child(19),
+    .photo-mosaic img:nth-child(24),
+    .photo-mosaic img:nth-child(29),
+    .photo-mosaic img:nth-child(33),
+    .photo-mosaic img:nth-child(37),
+    .photo-mosaic img:nth-child(41),
+    .photo-mosaic img:nth-child(46) {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    /* Force last row to fill */
+    .photo-mosaic::after {
+      content: "";
+      grid-column: 1 / -1;
+      height: 0;
+    }
+
+    /* --- MOBILE --- */
+    @media (max-width: 768px) {
+      .photo-mosaic {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .photo-mosaic img {
+        aspect-ratio: 3 / 4;
+      }
+
+      /* Disable span on mobile */
+      .photo-mosaic img:nth-child(4),
+      .photo-mosaic img:nth-child(9),
+      .photo-mosaic img:nth-child(14),
+      .photo-mosaic img:nth-child(19),
+      .photo-mosaic img:nth-child(24),
+      .photo-mosaic img:nth-child(29),
+      .photo-mosaic img:nth-child(33),
+      .photo-mosaic img:nth-child(37),
+      .photo-mosaic img:nth-child(41),
+      .photo-mosaic img:nth-child(46) {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+
+      .header-top, .header-container {
+        flex-direction: column;
+        gap: 10px;
+        padding-left: 20px !important;
+        padding-right: 70px !important;
+        width: 100% !important;
+      }
+
+      .project-title {
+        font-size: 3rem;
+        text-align: left !important;
+        margin: 0 !important;
+        padding-left: 20px !important;
+        color: #000 !important;
+      }
+
+      .credits, .description {
+        width: 100% !important;
+        padding-left: 20px !important;
+        margin-top: 0 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="header-top">
+    <h1 class="project-title">FARFETCH, Community 2.0</h1>
+    <a href="projects.html" class="close-button">Close</a>
+  </div>
+
+  <div class="header-container">
+    <div class="description">
+      <p>
+        Our team developed an influencer-driven strategy to enhance catalog discovery and the shopping experience. The project involved ongoing casting and remote shoots with designers, boutique owners, and artists around the world, strengthening the platform’s connection with its creative communities.
+        <br><br> SERVICES: BRIEFFING, CASTING, REMOTE ART DIRECTION
+      </p>  
+    </div>
+    <div class="credits">
+      <p>Various photographers around the World ♡</p>
+    </div>
+  </div>
+
+  <!-- 48 IMAGES MOSAIC -->
+  <section class="photo-mosaic">
+    <img src="assets/images/projects/project17b/1.jpg" alt="1">
+    <img src="assets/images/projects/project17b/2.jpg" alt="2">
+    <img src="assets/images/projects/project17b/4.jpg" alt="3">
+    <img src="assets/images/projects/project17b/3.jpg" alt="4">
+    <img src="assets/images/projects/project17b/5.jpg" alt="5">
+    <img src="assets/images/projects/project17b/6.jpg" alt="6">
+    <img src="assets/images/projects/project17b/7.jpg" alt="7">
+    <img src="assets/images/projects/project17b/8.jpg" alt="8">
+    <img src="assets/images/projects/project17b/20.jpg" alt="9">
+    <img src="assets/images/projects/project17b/10.jpg" alt="10">
+    <img src="assets/images/projects/project17b/11.jpg" alt="11">
+    <img src="assets/images/projects/project17b/12.jpg" alt="12">
+    <img src="assets/images/projects/project17b/13.jpg" alt="13">
+    <img src="assets/images/projects/project17b/23.jpg" alt="15">
+    <img src="assets/images/projects/project17b/17.jpg" alt="17">
+    <img src="assets/images/projects/project17b/18.jpg" alt="18">
+    <img src="assets/images/projects/project17b/19.jpg" alt="19">
+    <img src="assets/images/projects/project17b/9.jpg" alt="20">
+    <img src="assets/images/projects/project17b/21.jpg" alt="21">
+    <img src="assets/images/projects/project17b/22.jpg" alt="22">
+    <img src="assets/images/projects/project17b/15.jpg" alt="23">
+    <img src="assets/images/projects/project17b/33.jpg" alt="24">
+    <img src="assets/images/projects/project17b/25.jpg" alt="25">
+    <img src="assets/images/projects/project17b/26.jpg" alt="26">
+    <img src="assets/images/projects/project17b/14.jpg" alt="27">
+    <img src="assets/images/projects/project17b/49.jpg" alt="27">
+    <img src="assets/images/projects/project17b/28.jpg" alt="28">
+    <img src="assets/images/projects/project17b/29.jpg" alt="29">
+    <img src="assets/images/projects/project17b/30.jpg" alt="30">
+    <img src="assets/images/projects/project17b/37.jpg" alt="30">
+    <img src="assets/images/projects/project17b/31.jpg" alt="31">
+    <img src="assets/images/projects/project17b/32.jpg" alt="32">
+    <img src="assets/images/projects/project17b/27.jpg" alt="33">
+    <img src="assets/images/projects/project17b/34.jpg" alt="34">
+    <img src="assets/images/projects/project17b/35.jpg" alt="35">
+    <img src="assets/images/projects/project17b/36.jpg" alt="36">
+    <img src="assets/images/projects/project17b/24.jpg" alt="37">
+    <img src="assets/images/projects/project17b/38.jpg" alt="38">
+    <img src="assets/images/projects/project17b/39.jpg" alt="39">
+        <img src="assets/images/projects/project17b/16.jpg" alt="16">
+
+    <img src="assets/images/projects/project17b/40.jpg" alt="40">
+    <img src="assets/images/projects/project17b/41.jpg" alt="41">
+    <img src="assets/images/projects/project17b/42.jpg" alt="42">
+    <img src="assets/images/projects/project17b/43.jpg" alt="43">
+    <img src="assets/images/projects/project17b/44.jpg" alt="44">
+    <img src="assets/images/projects/project17b/46.jpg" alt="45">
+    <img src="assets/images/projects/project17b/45.jpg" alt="46">
+    <img src="assets/images/projects/project17b/47.jpg" alt="47">
+    <img src="assets/images/projects/project17b/48.jpg" alt="48">
+  </section>
+</body>
+</html>

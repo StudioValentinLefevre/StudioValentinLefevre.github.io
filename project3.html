@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;  /* Reset body margin */
+        }
+
+        /* Header & Titles */
+        .header-container, .header-top {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+            padding: 0px 40px; /* Padding restored */
+            padding-bottom: 50px;
+        }
+
+        .header-top {
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px; /* Padding restored */
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: normal; /* This ensures regular weight */
+            letter-spacing: 2px;
+            margin: 0;
+            color: #000;
+        }
+
+        .credits {
+            width: 23%;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: #000;
+            line-height: 1.5;
+            flex-shrink: 0;
+        }
+
+        .description {
+            width: 77%;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .close-button {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: black;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #000;
+        }
+
+        /* Full-Bleed Images & Videos */
+        .full-width-image img, .three-image-grid img, .two-image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Grid Layouts */
+        .three-image-grid, .two-image-grid {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .three-image-grid div { width: 33.33%; }
+        .two-image-grid div { width: 50%; }
+
+        /* Media Item Styles */
+        .media-item { position: relative; overflow: hidden; }
+        .media-item video, .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-top">
+        <h1 class="project-title">Future Icons: Shaping Jewelry's Future</h1>
+        <a href="projects.html" class="close-button">Close</a>
+    </div>
+    <div class="header-container">
+        <div class="description">
+            <p>
+To mark the introduction of the new wave of fine jewelry designers on FARFETCH, we crafted a visual narrative that merges bold innovation with timeless craftsmanship. This campaign captures the essence of the new guard, setting the stage for the icons that will define the future of luxury.
+
+                <br><br> SERVICES: CASTING, SHOOT ART DIRECTION, CREATIVE DIRECTION
+            </p>
+        </div>
+        <div class="credits">
+            <p>PHOTOGRAPHY: thurstan redding</p>
+        </div>
+    </div>
+
+    <!-- Full Bleed Images -->
+    <div class="full-width-image">
+        <img src="assets/images/projects/project3/tr01.jpg" alt="Image 1">
+    </div>
+
+    <!-- Two Images Row -->
+    <div class="two-image-grid">
+        <div><img src="assets/images/projects/project3/tr02.jpg" alt="Image 6"></div>
+        <div><img src="assets/images/projects/project3/tr03.jpg" alt="Image 7"></div>
+    </div>
+
+
+    <!-- Two Images Row -->
+    <div class="two-image-grid">
+        <div><img src="assets/images/projects/project3/tr04.jpg" alt="Image 11"></div>
+        <div><img src="assets/images/projects/project3/tr05.jpg" alt="Image 12"></div>
+    </div>
+
+
+
+</body>
+</html>

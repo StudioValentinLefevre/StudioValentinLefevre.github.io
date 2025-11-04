@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;  
+        }
+
+        /* Header & Titles */
+        .header-container, .header-top {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+            padding: 0px 40px;
+            padding-bottom: 50px;
+        }
+
+        .header-top {
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+            margin: 0;
+            color: #000;
+        }
+
+        .credits {
+            width: 23%;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: #000;
+            line-height: 1.5;
+            flex-shrink: 0;
+        }
+
+        .description {
+            width: 77%;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .close-button {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: black;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #000;
+        }
+
+        /* Full-Bleed Images & Videos */
+        .full-width-image img, .image-grid img, .three-image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-bleed-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-bleed-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Grid Layouts */
+        .image-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: nowrap; /* Ensure images stay in a row */
+            width: 100%;
+            max-width: 100vw;
+            margin: 0;
+            gap: 0;
+        }
+
+        .image-grid div {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .three-media-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 100vw;
+        }
+
+        .three-media-grid .media-item {
+            width: 33.33%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .media-item img, .media-item video {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .header-top, .header-container {
+                flex-direction: column;
+                gap: 10px;
+                padding-left: 20px !important;
+                padding-right: 70px !important;
+                width: 100% !important;
+            }
+
+            .project-title {
+                font-size: 3rem;
+                text-align: left !important;
+                margin: 0 !important;
+                padding-left: 20px !important;
+                color: #000 !important;
+            }
+
+            .credits, .description {
+                width: 100% !important;
+                padding-left: 20px !important;
+                margin-top: 0 !important;
+            }
+
+            .image-grid {
+                flex-direction: column;
+            }
+
+            .image-grid div {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-top">
+        <h1 class="project-title">Vestiaire Collective's Styling Campaign</h1>
+        <a href="projects.html" class="close-button">Close</a>
+    </div>
+
+    <div class="header-container">
+        <div class="description">
+            <p>
+                In 2023, we reinforced Vestiaire Collective’s position as the leading destination for pre-loved fashion by collaborating with top stylists like Erin Walsh and Marylin Fitoussi. We developed The Stylist Collective, a series of masterclasses offering expert insights on vintage finds, curated edits, and styling inspiration. Hosted by Natacha Morice, the series brought a fresh perspective to sustainable fashion.
+                <br><br> SERVICES: CREATIVE DIRECTION, CASTING, ART DIRECTION, CREATIVE SCRIPT
+            </p>  
+        </div>
+        <div class="credits">
+            <p>Photography: Charly Ghosp</p>
+            <p>Video: Loïc Prigent</p>
+            <p>Production: Kaptive.</p>
+        </div>
+    </div>
+
+
+    <div class="full-width-image">
+                <img src="assets/images/projects/project11/vc01.jpg" alt="Project Image 1">
+
+    </div>
+    <div class="image-grid">
+        <div><img src="assets/images/projects/project11/vc02.jpg" alt="Image 1"></div>
+        <div><img src="assets/images/projects/project11/vc03.jpg" alt="Image 2"></div>
+    </div>
+
+
+    <div class="three-media-grid">
+        <div class="media-item">
+            <img src="assets/images/projects/project11/vc04.jpg" alt="Image">
+        </div>
+        <div class="media-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/vc01.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="media-item">
+            <img src="assets/images/projects/project11/vc05.jpg" alt="Image">
+        </div>
+    </div>
+
+    <div class="image-grid">
+        <div><img src="assets/images/projects/project11/vc06.jpg" alt="Image 7"></div>
+        <div><img src="assets/images/projects/project11/vc07.jpg" alt="Image 8"></div>
+    </div>
+</body>
+</html>

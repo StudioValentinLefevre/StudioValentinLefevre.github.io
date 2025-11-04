@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .three-media-grid {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+        }
+
+        .three-media-grid .media-item {
+            width: 33.33%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .three-media-grid .media-item img,
+        .three-media-grid .media-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .three-media-grid {
+                flex-direction: column;
+            }
+
+            .three-media-grid .media-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="three-media-grid">
+        <div class="media-item">
+            <img src="assets/images/projects/project1/dsm02.jpg" alt="Image">
+        </div>
+        <div class="media-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/project13.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="media-item">
+            <img src="assets/images/projects/project1/dsm02.jpg" alt="Image">
+        </div>
+    </div>
+</body>
+</html>

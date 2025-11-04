@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .header-container, .header-top {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+            padding: 0px 40px;
+            padding-bottom: 50px;
+        }
+
+        .header-top {
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+            margin: 0;
+            color: #000;
+        }
+
+        .credits {
+            width: 23%;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: #000;
+            line-height: 1.5;
+            flex-shrink: 0;
+        }
+
+        .description {
+            width: 77%;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .close-button {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: black;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #000;
+        }
+
+        .full-bleed-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-bleed-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Grid Layout */
+        .media-grid {
+            display: flex;
+            justify-content: space-between; /* Space between the videos */
+            gap: 0;  /* Explicitly remove the gap between items */
+        }
+
+        .media-item {
+            width: 33.33%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .media-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin: 0 !important;  /* Remove margin */
+            padding: 0 !important;  /* Remove padding */
+            display: block;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .header-top, .header-container {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            .project-title {
+                font-size: 3rem;
+                text-align: left;
+                margin: 0;
+                color: #000;
+            }
+
+            .credits, .description {
+                width: 100%;
+            }
+
+            /* Media Item Adjustments for Mobile */
+            .media-item {
+                width: 100% !important;  /* Make each media item take full width */
+                margin-bottom: 0 !important;
+            }
+
+            .media-grid {
+                flex-direction: column;  /* Stack the items vertically */
+                gap: 0 !important;  /* No gap between items */
+            }
+
+            /* Remove any unwanted padding or margin under the videos */
+            .media-item video {
+                margin-bottom: 0 !important; /* Ensure no bottom margin */
+                padding-bottom: 0 !important; /* Ensure no padding at the bottom */
+                padding-top: 0 !important; /* Ensure no padding at the top */
+            }
+
+            .full-bleed-container {
+                margin-bottom: 0 !important;
+            }
+
+            .full-width-image img, .image-grid img, .three-image-grid img {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+
+            .full-bleed-video {
+                margin-bottom: 0 !important;
+                padding-bottom: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-top">
+        <h1 class="project-title">From FARFETCH, with Love</h1>
+        <a href="projects.html" class="close-button">Close</a>
+    </div>
+    <div class="header-container">
+        <div class="description">
+            <p>
+In this 2020 brand campaign, led by the brand’s Creative Director, our team focused on the 360° deployment, ensuring a cohesive rollout across all channels. The campaign aimed to reaffirm FARFETCH’s original USP—connecting the best fashion boutiques with fashion lovers worldwide. This vision was brought to life through a collaboration between 10 Corso Como Milano and Chloé Wise in NYC, complemented by social-first edits from other stores.
+
+                <br><br> SERVICES: CREATIVE DIRECTION, CONTENT CREATION, INFLUENCER STRATEGY
+            </p>  
+        </div>
+             <div class="credits">
+            <p>global brand Director: Ronojoy Dam</p>
+            <p>Video: Frank Lebon</p>
+        </div>
+    </div>
+
+    <!-- Full-Bleed Video -->
+    <div class="full-bleed-container">
+        <video class="full-bleed-video" autoplay muted loop playsinline>
+            <source src="assets/videos/ffl01.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Media Grid (Three videos side by side) -->
+    <div class="media-grid">
+        <div class="media-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/ffl02.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="media-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/ffl03.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="media-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/ffl04.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    
+</body>
+</html>

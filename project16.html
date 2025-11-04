@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .header-container, .header-top {
+            width: 100%;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+            padding: 0px 40px;
+            padding-bottom: 50px;
+        }
+
+        .header-top {
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+            margin: 0;
+            color: #000;
+        }
+
+        .credits {
+            width: 23%;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: #000;
+            line-height: 1.5;
+            flex-shrink: 0;
+        }
+
+        .description {
+            width: 77%;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .close-button {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: black;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #000;
+        }
+
+        .full-width-image img, .image-grid img, .three-image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-bleed-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-bleed-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-grid, .three-image-grid, .media-grid {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            gap: 0;
+        }
+
+        .image-grid div { width: 50%; }
+        .three-image-grid div { width: 33.33%; }
+        .media-grid .media-item { width: 50%; }
+
+        .media-item {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .media-item video, .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .header-top, .header-container {
+                flex-direction: column;
+                gap: 10px;
+                padding: 20px;
+                width: 100%;
+            }
+
+            .project-title {
+                font-size: 2.5rem;
+                text-align: left;
+                padding-left: 0;
+            }
+
+            .credits, .description {
+                width: 100%;
+                padding-left: 0;
+                margin-top: 0;
+            }
+
+            .media-grid {
+                flex-direction: column;
+            }
+
+            .media-grid .media-item {
+                width: 100%;
+            }
+
+            .three-image-grid {
+                flex-direction: column; /* Stacks images vertically on mobile */
+                gap: 0; /* Removes the space between images */
+            }
+
+            .three-image-grid div {
+                width: 100%; /* Ensures images take full width */
+            }
+
+            .media-item video, .media-item img {
+                margin-bottom: -4px; /* Removes bottom padding on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-top">
+        <h1 class="project-title">Vestiaire Collective: Long Live Fashion</h1>
+        <a href="projects.html" class="close-button">Close</a>
+    </div>
+
+    <div class="header-container">
+        <div class="description">
+            <p>
+                In 2021, Vestiaire Collective partnered with London agency Droga5 and director Andreas Nilsson to relaunch its brand with the bold "Long Live Fashion" campaign, featuring puppets crafted from pre-loved clothes. We ensured a cohesive vision across all brand touchpoints, collaborating with photographers like Campbell Addy and Loic Prigent while also directing additional shoots with Charly Ghosp. The campaign extended beyond film into local activations, including live puppet performances at Paris Fashion Week and collaborations with artists like Pietro Terzini.
+                <br><br> SERVICES: CREATIVE DIRECTION, ADVERTISING, 360 CAMPAIGN
+            </p>  
+        </div>
+        <div class="credits">
+            <p>Agency: Droga5</p>
+            <p>Video: Andreas Nilsson</p>
+            <p>Photo: Campbell Addy, Charly Ghosp</p>
+        </div>
+    </div>
+
+    <div class="full-width-image">
+        <img src="assets/images/projects/project16/lf01.jpg" alt="Project Image 1">
+    </div>
+   
+    <div class="three-image-grid">
+        <div><img src="assets/images/projects/project16/lf02.jpg" alt="Image 4"></div>
+        <div><img src="assets/images/projects/project16/lf03.jpg" alt="Image 5"></div>
+        <div><img src="assets/images/projects/project16/lf04.jpg" alt="Image 6"></div>
+    </div>
+
+    <!-- Half-Width Video + Image -->
+    <div class="media-grid">
+        <div class="media-item half-width">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/lf01.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="media-item half-width">
+            <img src="assets/images/projects/project16/lf05.jpg" alt="Image 2">
+        </div>
+    </div>
+    
+    <div class="three-image-grid">
+        <div><img src="assets/images/projects/project16/lf06.jpeg" alt="Image 4"></div>
+        <div><img src="assets/images/projects/project16/lf07.jpeg" alt="Image 5"></div>
+        <div><img src="assets/images/projects/project16/lf08.jpeg" alt="Image 6"></div>
+    </div>
+    
+    <!-- Half-Width Video + Image -->
+    <div class="media-grid">
+        <div class="media-item half-width">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/lf02.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="media-item half-width">
+            <img src="assets/images/projects/project16/lf09.jpg" alt="Image 2">
+        </div>
+    </div>
+    
+</body>
+</html>

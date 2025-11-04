@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .header-container, .header-top {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+            padding: 0px 40px;
+            padding-bottom: 50px;
+        }
+
+        .header-top {
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+            margin: 0;
+            color: #000;
+        }
+
+        .credits {
+            width: 23%;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: #000;
+            line-height: 1.5;
+            flex-shrink: 0;
+        }
+
+        .description {
+            width: 77%;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .close-button {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: black;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #000;
+        }
+
+        .media-grid {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .media-item {
+            width: 33.33%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .media-item img, .media-item video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .media-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+        @media (max-width: 768px) {
+            .header-top, .header-container {
+                flex-direction: column;
+                gap: 10px;
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                width: 100% !important;
+            }
+
+            .project-title {
+                font-size: 3rem;
+                text-align: left !important;
+                margin: 0 !important;
+                padding-left: 20px !important;
+                color: #000 !important;
+            }
+
+            .credits, .description {
+                width: 100% !important;
+                padding-left: 20px !important;
+                margin-top: 0 !important;
+            }
+
+            .media-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .media-item {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-top">
+        <h1 class="project-title">Local European, SS24 Lookbook and Some Strategy</h1>
+        <a href="projects.html" class="close-button">Close</a>
+    </div>
+    <div class="header-container">
+        <div class="description">
+            <p>
+                In 2022, we collaborated with Local European on the occasion of their summer shoot, in Milan. We shot B-Roll during their e-commerce and produced social-first videos.<br><br> SERVICES: PHOTOGRAPHY, SOCIAL CONTENT, CASTING 
+            </p>
+        </div>
+        <div class="credits"></div>
+    </div>
+
+    <!-- Première rangée -->
+    <div class="media-grid">
+        <div class="media-item">
+            <img src="assets/images/projects/project6/le03.JPG" alt="Still Image">
+        </div>
+        <div class="media-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/le02.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="media-item">
+            <img src="assets/images/projects/project6/le01.jpg" alt="Still Image">
+        </div>
+    </div>
+
+    <!-- Deuxième rangée -->
+    <div class="media-grid">
+        <div class="media-item">
+            <img src="assets/images/projects/project6/le04.jpg" alt="Still Image">
+        </div>
+        <div class="media-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/le05.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="media-item">
+            <img src="assets/images/projects/project6/le06.jpg" alt="Still Image">
+        </div>
+    </div>
+
+    <!-- Troisième rangée (Vidéo / Photo / Vidéo) -->
+    <div class="media-grid">
+        <div class="media-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/le07.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="media-item">
+            <img src="assets/images/projects/project6/le08.jpg" alt="Still Image">
+        </div>
+        <div class="media-item">
+            <video autoplay muted loop playsinline>
+                <source src="assets/videos/le09.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</body>
+</html>

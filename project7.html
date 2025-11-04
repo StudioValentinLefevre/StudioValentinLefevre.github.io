@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        /* Header & Titles */
+        .header-container, .header-top {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+            padding: 0px 40px;
+            padding-bottom: 50px;
+        }
+
+        .header-top {
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+        }
+
+        .project-title {
+            font-size: 3rem;
+            font-weight: normal;
+            letter-spacing: 2px;
+            margin: 0;
+            color: #000;
+        }
+
+        .credits {
+            width: 23%;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: #000;
+            line-height: 1.5;
+            flex-shrink: 0;
+        }
+
+        .description {
+            width: 77%;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .close-button {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: black;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #000;
+        }
+
+        /* Full-Bleed Images & Videos */
+        .full-width-image img, .three-image-grid img, .two-image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Grid Layouts */
+        .three-image-grid, .two-image-grid {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            gap: 0; /* No gap between images */
+        }
+
+        .three-image-grid div { width: 33.33%; }
+        .two-image-grid div { width: 50%; }
+
+        /* Mobile Stacking - Stack images on smaller screens */
+        @media (max-width: 768px) {
+            .three-image-grid, .two-image-grid {
+                flex-direction: column; /* Stack images vertically */
+                align-items: center; /* Center the images */
+            }
+
+            .three-image-grid div, .two-image-grid div {
+                width: 100%; /* Make images take full width */
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="header-top">
+        <h1 class="project-title">FARFETCH's Community</h1>
+        <a href="projects.html" class="close-button">Close</a>
+    </div>
+    <div class="header-container">
+        <div class="description">
+            <p>
+                Our team developed an influencer-driven strategy to enhance the shopping experience and catalog discovery, engaging global designers, boutique owners, and artists over the course of a year to strengthen the platform’s ties with diverse communities. Castings by People File & internal team, with styling by talents and photographers worldwide.
+                <br><br> SERVICES: CASTING, SHOOT ART DIRECTION, STORYTELLING
+            </p>
+        </div>
+        <div class="credits">
+            <p>CASTING: PEOPLE-FILE</p>
+            <p>PHOTOGRAPHY BY MULTIPLE TALENTS</p>
+        </div>
+    </div>
+
+    <!-- Three Images Row -->
+    <div class="three-image-grid">
+        <div><img src="assets/images/projects/project7/co02.jpg" alt="Image 2"></div>
+        <div><img src="assets/images/projects/project7/co03.jpg" alt="Image 3"></div>
+        <div><img src="assets/images/projects/project7/co04.jpg" alt="Image 4"></div>
+    </div>
+
+    <!-- Two Images Row -->
+    <div class="two-image-grid">
+        <div><img src="assets/images/projects/project7/co05.jpg" alt="Image 5"></div>
+        <div><img src="assets/images/projects/project7/co06.jpg" alt="Image 6"></div>
+    </div>
+
+    <!-- Three Images Row -->
+    <div class="three-image-grid">
+        <div><img src="assets/images/projects/project7/co07.jpg" alt="Image 7"></div>
+        <div><img src="assets/images/projects/project7/co08.jpg" alt="Image 8"></div>
+        <div><img src="assets/images/projects/project7/co09.jpg" alt="Image 9"></div>
+    </div>
+
+    <!-- Two Images Row -->
+    <div class="two-image-grid">
+        <div><img src="assets/images/projects/project7/co10.jpg" alt="Image 10"></div>
+        <div><img src="assets/images/projects/project7/co11.jpg" alt="Image 11"></div>
+    </div>
+
+    <!-- Three Images Row -->
+    <div class="three-image-grid">
+        <div><img src="assets/images/projects/project7/co12.jpg" alt="Image 12"></div>
+        <div><img src="assets/images/projects/project7/co13.jpg" alt="Image 13"></div>
+        <div><img src="assets/images/projects/project7/co14.jpg" alt="Image 14"></div>
+    </div>
+
+    <!-- Two Images Row -->
+    <div class="two-image-grid">
+        <div><img src="assets/images/projects/project7/co15.jpg" alt="Image 15"></div>
+        <div><img src="assets/images/projects/project7/co16.jpg" alt="Image 16"></div>
+    </div>
+
+    <!-- Three Images Row -->
+    <div class="three-image-grid">
+        <div><img src="assets/images/projects/project7/co17.jpg" alt="Image 17"></div>
+        <div><img src="assets/images/projects/project7/co18.jpg" alt="Image 18"></div>
+        <div><img src="assets/images/projects/project7/co19.jpg" alt="Image 19"></div>
+    </div>
+
+    <!-- Two Images Row -->
+    <div class="two-image-grid">
+        <div><img src="assets/images/projects/project7/co20.jpg" alt="Image 20"></div>
+        <div><img src="assets/images/projects/project7/co21.jpg" alt="Image 21"></div>
+    </div>
+
+    <!-- Three Images Row -->
+    <div class="three-image-grid">
+        <div><img src="assets/images/projects/project7/co22.jpg" alt="Image 22"></div>
+        <div><img src="assets/images/projects/project7/co23.jpg" alt="Image 23"></div>
+        <div><img src="assets/images/projects/project7/co24.jpg" alt="Image 24"></div>
+    </div>
+</body>
+</html>

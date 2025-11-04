@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projet - Portfolio</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            margin: 0;  /* Reset body margin */
+        }
+
+        /* Header & Titles */
+        .header-container, .header-top {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            position: relative;
+            padding: 0px 40px; /* Padding restored */
+            padding-bottom: 50px;
+        }
+
+        .header-top {
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px; /* Padding restored */
+        }
+
+ .project-title {
+    font-size: 3rem;
+    font-weight: normal; /* This ensures regular weight */
+    letter-spacing: 2px;
+    margin: 0;
+    color: #000;
+}
+
+
+        .credits {
+            width: 23%;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: #000;
+            line-height: 1.5;
+            flex-shrink: 0;
+
+        }
+
+        .description {
+            width: 77%;
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #333;
+        }
+
+        .close-button {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            color: black;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 10;
+            transition: color 0.3s ease;
+        }
+
+        .close-button:hover {
+            color: #000;
+        }
+
+        /* Full-Bleed Images & Videos */
+        .full-width-image img, .image-grid img, .three-image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .full-bleed-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .full-bleed-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Grid Layouts */
+        .image-grid, .three-image-grid {
+            display: flex;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .image-grid div { width: 50%; }
+        .three-image-grid div { width: 33.33%; }
+
+        .two-vertical, .media-grid {
+            display: flex;
+            gap: 0;
+        }
+
+        .vertical-video, .half-width { width: 50%; }
+
+        .media-item { position: relative; overflow: hidden; }
+        .media-item video, .media-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            /* Both containers will have identical left alignment */
+            .header-top, .header-container {
+                flex-direction: column;
+                gap: 10px;
+                padding-left: 20px !important; /* Explicit left padding */
+                padding-right: 70px !important;
+                width: 100% !important; /* Ensures both take full width */
+            }
+
+            .project-title {
+                font-size: 3rem;
+                text-align: left !important;
+                margin: 0 !important; /* Remove any default margin */
+                padding-left: 20px !important; /* Ensure the title aligns with description */
+                color: #000 !important; /* Ensure title is black on mobile */
+            }
+
+            .credits, .description {
+                width: 100% !important;  /* Ensure full width for both credits and description */
+                padding-left: 20px !important; /* Explicit left padding for description */
+                margin-top: 0 !important; /* Ensure no top margin */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-top">
+        <h1 class="project-title">All Eyes on BALENCIAGA</h1>
+        <a href="projects.html" class="close-button">Close</a>
+    </div>
+    <div class="header-container">
+        <div class="description">
+            <p>
+Balenciaga became the first major brand to sell directly on FARFETCH platform. For their launch, we created a video campaign featuring CCTV-style footage of models in London, building anticipation and establishing the brand’s presence through a 360 and PR push.
+                <br><br> SERVICES: CREATIVE DIRECTION, CASTING, 360 CAMPAIGN DELIVERY
+            </p>
+        </div>
+        <div class="credits">
+            <p>photography: rOBBIE FIMMANO</p>
+            <p>VIDEOGRAPHY: SAM HISCOX</p>
+        </div>
+    </div>
+
+
+
+        <!-- Full-Bleed Video -->
+    <div class="full-bleed-container">
+        <video class="full-bleed-video" autoplay muted loop playsinline>
+            <source src="assets/videos/ba01.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+
+   <div class="image-grid">
+        <div><img src="assets/images/projects/project9/ba02.jpg" alt="Image 2"></div>
+        <div><img src="assets/images/projects/project9/ba03.jpg" alt="Image 3"></div>
+    </div>
+
+
+    <!-- Full-Bleed Video -->
+    <div class="full-bleed-container">
+        <video class="full-bleed-video" autoplay muted loop playsinline>
+            <source src="assets/videos/BA02.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <div class="full-width-image">
+                <img src="assets/images/projects/project9/ba01.jpg" alt="Project Image 1">
+
+    </div>
+
+   <div class="image-grid">
+        <div><img src="assets/images/projects/project9/ba04.jpg" alt="Image 2"></div>
+        <div><img src="assets/images/projects/project9/ba05.jpg" alt="Image 3"></div>
+    </div>
+
+</body>
+</html>

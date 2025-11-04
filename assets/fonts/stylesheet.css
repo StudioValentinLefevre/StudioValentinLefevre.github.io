@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Silka';
+    src: url('Silka-Black.woff2') format('woff2'),
+        url('Silka-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Silka';
+    src: url('Silka-Regular.woff2') format('woff2'),
+        url('Silka-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Silka';
+    src: url('Silka-Bold.woff2') format('woff2'),
+        url('Silka-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
