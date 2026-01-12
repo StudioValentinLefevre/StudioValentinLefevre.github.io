@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farfetch AW20 Boutiques Campaign | Valentin Lefevre</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <style>
+        /* 1. Base Carousel Item - Enforcing Margins & Centering */
+        .project-page .carousel-item {
+            top: 140px !important; 
+            bottom: 30px !important;
+            left: 30px !important;   /* Enforce 30px padding */
+            right: 30px !important;  /* Enforce 30px padding */
+            height: calc(100vh - 170px) !important;
+            display: flex;
+            align-items: center;     /* Vertical Center */
+            justify-content: center; /* Horizontal Center */
+            pointer-events: none;
+            overflow: hidden; 
+        }
+        .project-page .carousel-item.active { pointer-events: auto; }
+
+        /* 2. Media Styling - Consistent Sizing & Radius */
+        .project-page img {
+            height: 100% !important;     /* Max out height first */
+            width: auto !important;      /* Width scales naturally */
+            max-width: 100% !important;  /* Never overflow width */
+            object-fit: contain;         /* Show full image without cropping */
+            border-radius: 6px;          /* Round edges on everything */
+            display: block;
+            margin: 0 auto;              /* Ensure centering */
+        }
+
+        /* 3. Double Media Layout */
+        .project-page .double-media {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 15px !important; 
+            height: 100% !important;
+            width: auto !important;
+        }
+        .project-page .media-col {
+            height: 100% !important;
+            width: auto !important;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .project-page nav { display: flex; justify-content: space-between; align-items: center; }
+        .project-page .brand-pill { text-decoration: none !important; }
+    </style>
+</head>
+<body class="mode-traditional project-page">
+
+    <div id="info-overlay" class="overlay">
+        <button id="close-info" class="close-btn">Close</button>
+        <div class="overlay-content">
+            <p>
+               For Farfetch’s 10th anniversary, I designed a campaign honoring our boutique partners, the foundation of our journey. I led concept development, set design sketches, casting, and photoshoot direction, delivering a 360° activation.
+
+Photography by<a href=""> Joachim Mueller-Ruchholtz</a>
+Style by<a href="https://www.instagram.com/olaoluebiti/?hl=fr"> Ola Ebiti</a>, set design<a href="https://www.maxbellhouse.com/"> Max Bellhouse</a>.
+
+            </p>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-left">
+            <a href="index.html" class="brand-pill">Valentin Lefevre</a>
+        </div>
+        <div class="nav-right">
+            <div id="open-info" class="brand-pill">Farfetch AW20 Boutiques Campaign</div>
+        </div>
+    </nav>
+
+    <main class="carousel-container">
+        
+        <div class="carousel-nav-left" id="prev"></div>
+        <div class="carousel-nav-right" id="next"></div>
+
+        <div class="carousel-item active">
+            <img src="assets/images/project06/01.jpg" alt="Slide 01">
+        </div>
+
+        <div class="carousel-item">
+            <div class="double-media">
+                <div class="media-col">
+                    <img src="assets/images/project06/02.jpg" alt="Slide 02 Left">
+                </div>
+                <div class="media-col">
+                    <img src="assets/images/project06/03.jpg" alt="Slide 02 Right">
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="double-media">
+                <div class="media-col">
+                    <img src="assets/images/project06/04.jpg" alt="Slide 03 Left">
+                </div>
+                <div class="media-col">
+                    <img src="assets/images/project06/05.jpg" alt="Slide 03 Right">
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <img src="assets/images/project06/06.jpg" alt="Slide 04">
+        </div>
+
+    </main>
+
+    <script>
+        const items = document.querySelectorAll('.carousel-item');
+        let current = 0;
+
+        function updateCarousel(index) {
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+            });
+        }
+
+        document.getElementById('next').onclick = () => { current = (current + 1) % items.length; updateCarousel(current); };
+        document.getElementById('prev').onclick = () => { current = (current - 1 + items.length) % items.length; updateCarousel(current); };
+
+        document.getElementById('open-info').onclick = () => document.getElementById('info-overlay').classList.add('active');
+        document.getElementById('close-info').onclick = () => document.getElementById('info-overlay').classList.remove('active');
+    </script>
+</body>
+</html>

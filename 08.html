@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FARFETCH Communities | Valentin Lefevre</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/png" href="assets/images/favicon.png">
+
+    <style>
+        /* --- Grid Layout --- */
+        .grid-container {
+            height: 100vh;
+            width: 100vw;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scrollbar-width: none;
+            display: block;
+        }
+        .grid-container::-webkit-scrollbar { display: none; }
+
+        .grid-track {
+            display: grid;
+            /* Height aligns with HP horizon: 140px top, 30px bottom */
+            grid-template-rows: repeat(2, calc((100vh - 180px) / 2)); 
+            grid-auto-columns: 155px; 
+            grid-auto-flow: column;
+            gap: 10px;
+            padding-top: 140px; 
+            padding-bottom: 30px;
+            padding-left: 30px;
+            padding-right: 30vw; 
+            width: max-content;
+        }
+
+        .grid-item {
+            height: 100%;
+            cursor: pointer;
+            transition: opacity 0.3s var(--easing);
+        }
+        .grid-item:hover { opacity: 0.8; }
+
+        .grid-item img {
+            width: 100%;
+            height: 100%;
+            border-radius: 6px;
+            display: block;
+            object-fit: cover;
+            pointer-events: none;
+        }
+
+        .portrait { grid-column: span 1; } 
+        .landscape { grid-column: span 2; } 
+
+        /* --- Lightbox Overlay --- */
+        #lightbox {
+            position: fixed; inset: 0;
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: zoom-out;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        #lightbox.active { display: flex; opacity: 1; }
+        
+        #lightbox img {
+            max-height: 85vh;
+            max-width: 85vw;
+            border-radius: 6px;
+            cursor: default;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            transform: scale(0.95);
+            transition: transform 0.5s var(--easing);
+        }
+        #lightbox.active img { transform: scale(1); }
+
+        .project-page .brand-pill { text-decoration: none !important; }
+    </style>
+</head>
+<body class="mode-traditional project-page">
+
+    <div id="info-overlay" class="overlay">
+        <button id="close-info" class="close-btn">Close</button>
+        <div class="overlay-content">
+            <p>
+         To enhance the shopping experience and catalog discovery, our team developed an influencer-driven strategy, requiring constant casting and remote shooting deliveries.
+
+We engaged designers, boutique owners, and artists worldwide, in a year long project strengthening the platforms links with communities.
+<br><br>
+Castings by<a href="https://www.minititle.com/people-file"> People File</a> & internal team
+Styling by talents themselves, various photographers cast around the world.
+
+ </p>        </div>
+    </div>
+
+    <div id="lightbox">
+        <img id="lightbox-img" src="" alt="Zoomed view">
+    </div>
+
+    <nav>
+        <div class="nav-left">
+            <a href="index.html" class="brand-pill">Valentin Lefevre</a>
+        </div>
+        <div class="nav-right">
+            <div id="open-info" class="brand-pill">FARFETCH Communities</div>
+        </div>
+    </nav>
+
+    <main class="grid-container" id="project-scroll">
+        <div class="grid-track">
+            
+            <div class="grid-item portrait" data-src="assets/images/project08/01.jpg"><img src="assets/images/project08/01.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/02.jpg"><img src="assets/images/project08/02.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/03.jpg"><img src="assets/images/project08/03.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/14.jpg"><img src="assets/images/project08/14.jpg"></div>
+
+            <div class="grid-item landscape" data-src="assets/images/project08/06.jpg"><img src="assets/images/project08/06.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/07.jpg"><img src="assets/images/project08/07.jpg"></div>
+                            <div class="grid-item portrait" data-src="assets/images/project08/11.jpg"><img src="assets/images/project08/11.jpg"></div>
+
+            <div class="grid-item landscape" data-src="assets/images/project08/08.jpg"><img src="assets/images/project08/08.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/12.jpg"><img src="assets/images/project08/12.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/13.jpg"><img src="assets/images/project08/13.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/04.jpg"><img src="assets/images/project08/04.jpg"></div>
+
+            <div class="grid-item landscape" data-src="assets/images/project08/15.jpg"><img src="assets/images/project08/15.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/16.jpg"><img src="assets/images/project08/16.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/17.jpg"><img src="assets/images/project08/17.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/18.jpg"><img src="assets/images/project08/18.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/19.jpg"><img src="assets/images/project08/19.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/20.jpg"><img src="assets/images/project08/20.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/21.jpg"><img src="assets/images/project08/21.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/05.jpg"><img src="assets/images/project08/05.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/09.jpg"><img src="assets/images/project08/09.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/10.jpg"><img src="assets/images/project08/10.jpg"></div>
+
+            <div class="grid-item landscape" data-src="assets/images/project08/22.jpg"><img src="assets/images/project08/22.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/23.jpg"><img src="assets/images/project08/23.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/24.jpg"><img src="assets/images/project08/24.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/25.jpg"><img src="assets/images/project08/25.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/26.jpg"><img src="assets/images/project08/26.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/27.jpg"><img src="assets/images/project08/27.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/28.jpg"><img src="assets/images/project08/28.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/29.jpg"><img src="assets/images/project08/29.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/30.jpg"><img src="assets/images/project08/30.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/31.jpg"><img src="assets/images/project08/31.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/32.jpg"><img src="assets/images/project08/32.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/33.jpg"><img src="assets/images/project08/33.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/34.jpg"><img src="assets/images/project08/34.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/35.jpg"><img src="assets/images/project08/35.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/36.jpg"><img src="assets/images/project08/36.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/37.jpg"><img src="assets/images/project08/37.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/38.jpg"><img src="assets/images/project08/38.jpg"></div>
+            <div class="grid-item portrait" data-src="assets/images/project08/39.jpg"><img src="assets/images/project08/39.jpg"></div>
+            <div class="grid-item landscape" data-src="assets/images/project08/40.jpg"><img src="assets/images/project08/40.jpg"></div>
+
+        </div>
+    </main>
+
+    <script>
+        const container = document.getElementById('project-scroll');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const infoOverlay = document.getElementById('info-overlay');
+
+        // Horizontal Wheel Scroll
+        window.addEventListener('wheel', (e) => {
+            if (container && !lightbox.classList.contains('active') && !infoOverlay.classList.contains('active')) {
+                container.scrollLeft += e.deltaY;
+            }
+        }, { passive: true });
+
+        // Info Overlay Controls
+        document.getElementById('open-info').onclick = () => infoOverlay.classList.add('active');
+        document.getElementById('close-info').onclick = () => infoOverlay.classList.remove('active');
+
+        // Lightbox Logic
+        document.querySelectorAll('.grid-item').forEach(item => {
+            item.addEventListener('click', () => {
+                lightboxImg.src = item.getAttribute('data-src');
+                lightbox.style.display = 'flex';
+                setTimeout(() => lightbox.classList.add('active'), 10);
+            });
+        });
+
+        // Close Lightbox
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg) {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                    lightboxImg.src = '';
+                }, 400);
+            }
+        });
+    </script>
+</body>
+</html>

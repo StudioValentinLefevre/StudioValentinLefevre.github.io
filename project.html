@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farfetch Campaign | Valentin Lefevre</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="mode-traditional project-page">
+
+    <div id="info-overlay" class="overlay">
+        <button id="close-info" class="close-btn">Close</button>
+        <div class="overlay-content">
+            <p>
+                For this bi-annual brand campaign, I conceptualised a vibrant approach...
+                <br><br>
+                Photography by Laura Jane Coulson.
+            </p>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-left">
+            <a href="index.html" class="brand-pill-back">Valentin Lefevre</a>
+        </div>
+        <div class="nav-right">
+            <div id="open-info" class="brand-pill">Farfetch AW Seasonal Campaign</div>
+        </div>
+    </nav>
+
+    <main class="carousel-container">
+        <div class="carousel-nav-left" id="prev"></div>
+        <div class="carousel-nav-right" id="next"></div>
+
+        <div class="carousel-item active">
+            <img src="assets/images/project01/01.jpg" alt="First Slide">
+        </div>
+
+        <div class="carousel-item">
+            <video muted loop playsinline><source src="assets/videos/01.mp4" type="video/mp4"></video>
+            <div class="naked-speaker">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M5 4H3V10H5L8 13V1L5 4Z" fill="white" />
+                    <path class="speaker-wave" d="M11 4.5C11.5 5.2 11.8 6.1 11.8 7C11.8 7.9 11.5 8.8 11 9.5" stroke="white" stroke-width="1.5" />
+                    <line class="mute-line" x1="1" y1="1" x2="13" y2="13" stroke="white" stroke-width="1.5" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="carousel-item double-media">
+            <div class="media-col">
+                <img src="assets/images/project01/02-left.jpg">
+            </div>
+            <div class="media-col">
+                <img src="assets/images/project01/02-right.jpg">
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

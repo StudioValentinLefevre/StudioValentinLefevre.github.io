@@ -1,0 +1,175 @@
+/* ==========================================================================
+   1. RESET & CORE VARIABLES
+   ========================================================================== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+    --nav-padding: 30px;
+    --hp-top: 140px;      /* Shared horizon for HP and Project media */
+    --bottom-padding: 30px;
+    --gap: 15px;
+    --border-radius: 6px;
+    --easing: cubic-bezier(0.16, 1, 0.3, 1);
+    --light-grey: #f4f4f4;
+    --dark-grey: #1a1a1a;
+}
+
+body, html {
+    width: 100%; height: 100%; overflow: hidden;
+    font-family: 'DM Sans', sans-serif;
+    transition: background-color 0.7s ease;
+    -webkit-font-smoothing: antialiased;
+}
+
+body.mode-traditional { background-color: #ffffff; color: #000000; }
+body.mode-ai { background-color: #0a0a0a; color: #ffffff; }
+
+a { color: inherit; text-decoration: underline; transition: opacity 0.3s ease; }
+a:hover { opacity: 0.6; }
+
+/* ==========================================================================
+   2. NAVIGATION (HP & PROJECT)
+   ========================================================================== */
+nav {
+    position: fixed; top: var(--nav-padding); left: var(--nav-padding); 
+    right: var(--nav-padding); display: flex; justify-content: space-between; 
+    align-items: center; z-index: 500;
+}
+
+.nav-left, .nav-right { display: flex; align-items: center; gap: 10px; }
+
+/* Brand Pills */
+.brand-pill {
+    padding: 10px 22px; border-radius: 100px; font-size: 13px; font-weight: 500;
+    cursor: pointer; transition: 0.6s var(--easing); background: var(--light-grey); color: #000;
+    text-decoration: none !important;
+}
+body.mode-ai .brand-pill { background: var(--dark-grey); color: #fff; }
+
+/* Project Page Back Link (No Pill/No Underline) */
+.brand-pill-back {
+    font-size: 13px; font-weight: 500; cursor: pointer;
+    text-decoration: none !important; color: inherit; padding: 10px 0;
+    background: transparent !important;
+}
+
+/* Categories & Filters (HP) */
+.sub-navigation { display: flex; align-items: center; margin-right: 10px; }
+.trad-filters, .ai-filters { display: flex; gap: 12px; align-items: center; }
+body.mode-ai .trad-filters { display: none; }
+body.mode-traditional .ai-filters { display: none; }
+
+.filter-btn, .filter-label {
+    background: none; border: none; font-family: inherit; font-size: 11px;
+    text-transform: uppercase; letter-spacing: 0.05em; color: #999;
+}
+.filter-btn { cursor: pointer; transition: color 0.3s ease; }
+body.mode-traditional .filter-btn.active { color: #000; }
+body.mode-ai .filter-label { color: #666; }
+
+/* Mode Switcher Toggle */
+.mode-toggle {
+    background: var(--light-grey); padding: 4px; border-radius: 100px;
+    display: flex; position: relative; width: 80px; justify-content: space-between; cursor: pointer;
+}
+body.mode-ai .mode-toggle { background: var(--dark-grey); }
+.toggle-bg {
+    position: absolute; top: 4px; left: 4px; width: 36px; height: 28px;
+    background: #fff; border-radius: 100px; z-index: 1; transition: transform 0.4s var(--easing);
+}
+body.mode-ai .toggle-bg { transform: translateX(36px); background: #333; }
+.mode-icon { width: 36px; height: 28px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 2; color: #999; }
+.mode-icon.active { color: #000; }
+body.mode-ai .mode-icon.active { color: #fff; }
+
+/* ==========================================================================
+   3. HOMEPAGE (HP) - HORIZONTAL STRIP
+   ========================================================================== */
+main.horizontal-scroll { height: 100vh; width: 100vw; overflow-x: auto; white-space: nowrap; scrollbar-width: none; }
+main.horizontal-scroll::-webkit-scrollbar { display: none; }
+
+.project-strip { 
+    display: inline-flex; height: 100%; 
+    padding-top: var(--hp-top); 
+    padding-bottom: var(--bottom-padding); 
+}
+
+.project-item { display: inline-block; height: 100%; margin-right: var(--gap); flex-shrink: 0; transition: 0.6s var(--easing); }
+.project-item.hidden { width: 0; margin-right: 0; opacity: 0; visibility: hidden; pointer-events: none; }
+
+.media-wrapper { height: 100%; border-radius: var(--border-radius); overflow: hidden; display: block; }
+img, video { height: 100%; width: auto; display: block; object-fit: cover; }
+
+/* ==========================================================================
+   4. PROJECT PAGE - CAROUSEL & DOUBLE MEDIA
+   ========================================================================== */
+.carousel-container {
+    height: 100vh; width: 100vw; display: flex; align-items: center;
+    justify-content: center; position: relative; overflow: hidden;
+}
+
+.carousel-item {
+    position: absolute; 
+    top: var(--hp-top); 
+    bottom: var(--bottom-padding);
+    left: var(--nav-padding); 
+    right: var(--nav-padding);
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity 0.5s var(--easing);
+    gap: var(--gap);
+}
+.carousel-item.active { opacity: 1; visibility: visible; pointer-events: auto; }
+
+/* Double Media side-by-side Logic */
+.double-media { display: flex; height: 100%; gap: var(--gap); width: auto; }
+.media-col { height: 100%; display: flex; align-items: center; position: relative; }
+
+.carousel-item img, 
+.carousel-item video,
+.media-col img, 
+.media-col video {
+    height: 100%; width: auto; max-width: 100%;
+    object-fit: contain; border-radius: var(--border-radius);
+}
+
+/* Nav Hitboxes */
+.carousel-nav-left, .carousel-nav-right { position: absolute; top: 0; height: 100%; width: 50%; z-index: 10; }
+.carousel-nav-left { left: 0; cursor: w-resize; }
+.carousel-nav-right { right: 0; cursor: e-resize; }
+
+/* ==========================================================================
+   5. OVERLAYS (ABOUT & INFO)
+   ========================================================================== */
+.overlay {
+    position: fixed; inset: 0; background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(50px); -webkit-backdrop-filter: blur(50px);
+    z-index: 2000; display: flex; align-items: center; justify-content: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.6s ease;
+}
+.overlay.active { opacity: 1; pointer-events: auto; }
+body.mode-ai .overlay { background: rgba(0, 0, 0, 0.95); }
+
+.close-btn {
+    position: fixed; top: 30px; left: 30px; background: var(--light-grey);
+    border: none; padding: 10px 22px; border-radius: 100px; font-size: 12px;
+    z-index: 2100; cursor: pointer; color: #000;
+}
+body.mode-ai .close-btn { background: var(--dark-grey); color: #fff; }
+
+.overlay-content { max-width: 750px; text-align: center; padding: 40px; }
+.overlay-content p { font-size: 1.8rem; line-height: 1.4; color: inherit; }
+
+/* Speaker / Sound icon */
+.naked-speaker { position: absolute; bottom: 20px; right: 20px; cursor: pointer; z-index: 100; opacity: 0.7; }
+
+/* ==========================================================================
+   6. MOBILE
+   ========================================================================== */
+@media (max-width: 768px) {
+    .sub-navigation { display: none !important; }
+    .overlay-content p { font-size: 1.1rem; }
+    nav { top: 20px; left: 20px; right: 20px; }
+    .project-strip { padding-top: 100px; }
+    .carousel-item { top: 100px; }
+}
