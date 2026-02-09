@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balenciaga | Valentin Lefevre</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Mobile Stacking Logic: Images stack on mobile for impact */
+        @media (max-width: 768px) {
+            .double-media { 
+                flex-direction: column !important; 
+                overflow-y: auto; 
+                height: auto !important;
+                width: 100% !important;
+            }
+            .media-col { 
+                height: auto !important; 
+                width: 100% !important; 
+                margin-bottom: 10px; 
+            }
+            .media-col img, .media-col video { 
+                width: 100% !important; 
+                height: auto !important; 
+            }
+            .carousel-item { 
+                overflow-y: auto !important; 
+                align-items: flex-start !important; 
+                padding-top: 20px; 
+                bottom: 10px !important; /* Mobile padding fix */
+            }
+        }
+    </style>
+</head>
+<body class="mode-traditional project-page">
+
+    <div id="info-overlay" class="overlay">
+        <button id="close-info" class="close-btn">Close</button>
+        <div class="overlay-content">
+            <p>
+             Re-exploration of the Balenciaga x Farfetch campaign, powered by Higgsfield and Krea.ai.
+                <br><br>
+            </p>
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-left">
+            <a href="index.html" class="brand-pill">Valentin Lefevre</a>
+        </div>
+        <div class="nav-right">
+            <div id="open-info" class="brand-pill">Balenciaga</div>
+        </div>
+    </nav>
+
+    <main class="carousel-container">
+        
+        <div class="carousel-nav-left" id="prev"></div>
+        <div class="carousel-nav-right" id="next"></div>
+
+        <div class="carousel-item active">
+            <div class="double-media">
+                <div class="media-col">
+                    <video muted loop playsinline autoplay><source src="assets/videos/ai_01/01.mp4" type="video/mp4"></video>
+                </div>
+                <div class="media-col">
+                    <video muted loop playsinline autoplay><source src="assets/videos/ai_01/02.mp4" type="video/mp4"></video>
+                    <div class="naked-speaker">
+                        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                            <path d="M5 4H3V10H5L8 13V1L5 4Z" fill="white" />
+                            <path class="speaker-wave" d="M11 4.5C11.5 5.2 11.8 6.1 11.8 7C11.8 7.9 11.5 8.8 11 9.5" stroke="white" stroke-width="1.5" />
+                            <line class="mute-line" x1="1" y1="1" x2="13" y2="13" stroke="white" stroke-width="1.5" />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <video muted loop playsinline><source src="assets/videos/ai_01/03.mp4" type="video/mp4"></video>
+            <div class="naked-speaker">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M5 4H3V10H5L8 13V1L5 4Z" fill="white" />
+                    <path class="speaker-wave" d="M11 4.5C11.5 5.2 11.8 6.1 11.8 7C11.8 7.9 11.5 8.8 11 9.5" stroke="white" stroke-width="1.5" />
+                    <line class="mute-line" x1="1" y1="1" x2="13" y2="13" stroke="white" stroke-width="1.5" />
+                </svg>
+            </div>
+        </div>
+
+    </main>
+
+    <script>
+        const items = document.querySelectorAll('.carousel-item');
+        let currentIdx = 0;
+
+        function updateCarousel(index) {
+            items.forEach((item, i) => {
+                item.classList.toggle('active', i === index);
+                const vids = item.querySelectorAll('video');
+                if (i === index) vids.forEach(v => v.play());
+                else vids.forEach(v => { v.pause(); v.currentTime = 0; });
+            });
+        }
+
+        const nextSlide = () => {
+            currentIdx = (currentIdx + 1) % items.length;
+            updateCarousel(currentIdx);
+        };
+
+        const prevSlide = () => {
+            currentIdx = (currentIdx - 1 + items.length) % items.length;
+            updateCarousel(currentIdx);
+        };
+
+        document.getElementById('next').onclick = nextSlide;
+        document.getElementById('prev').onclick = prevSlide;
+
+        // KEYBOARD NAVIGATION
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight') nextSlide();
+            if (e.key === 'ArrowLeft') prevSlide();
+        });
+
+        document.getElementById('open-info').onclick = () => document.getElementById('info-overlay').classList.add('active');
+        document.getElementById('close-info').onclick = () => document.getElementById('info-overlay').classList.remove('active');
+
+        // SOUND LOGIC
+        let globalMuted = true;
+        document.querySelectorAll('.naked-speaker').forEach(spk => {
+            spk.onclick = (e) => {
+                e.stopPropagation();
+                globalMuted = !globalMuted;
+                document.querySelectorAll('video').forEach(v => v.muted = globalMuted);
+                document.querySelectorAll('.mute-line').forEach(l => l.style.opacity = globalMuted ? "1" : "0");
+                document.querySelectorAll('.naked-speaker').forEach(s => s.style.opacity = globalMuted ? "0.7" : "1");
+            };
+        });
+    </script>
+</body>
+</html>
