@@ -5,14 +5,27 @@
     box-sizing: border-box;
 }
 
+/* Theme Tokens */
+:root {
+    --bg-color: #050505;
+    --text-color: #f2f2f2;
+}
+
+body.light {
+    --bg-color: #f5f5f5;
+    --text-color: #111111;
+}
+
 /* Body Styling */
 html, body {
     height: 100%;
     font-family: 'Silka', sans-serif;
     font-size: 12px;
-    color: #f2f2f2;
+    color: var(--text-color);
+    background-color: var(--bg-color);
     margin: 0;
     padding: 0;
+    transition: background-color 0.6s ease, color 0.6s ease;
 }
 
 /* Navigation Menu */
@@ -38,9 +51,28 @@ header {
 }
 
 .menu a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    font: inherit;
+    color: var(--text-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.theme-toggle:focus-visible {
+    outline: 1px solid var(--text-color);
+    outline-offset: 2px;
 }
 
 /* Full-Bleed Video Container */
@@ -67,11 +99,18 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Rawest Medium', sans-serif;
-    font-size: calc(10vw);
-    color: white;
-    text-align: center;
-    white-space: nowrap;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--text-color);
+    text-align: left;
+    white-space: normal;
+    line-height: 1.3;
     z-index: 20;
+    max-width: 80vw;
+}
+
+.hero-line {
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
 }
 
 /* Scrolling Text at the Bottom */
@@ -82,7 +121,7 @@ header {
     position: fixed;
     bottom: 0;
     background-color: transparent;
-    color: white;
+    color: var(--text-color);
     font-size: 3rem;
     z-index: 0;
     padding: 18px 0;
